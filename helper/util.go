@@ -3,6 +3,7 @@ package helper
 import (
 	"fmt"
 
+	"github.com/shashisharma307/linkedlist/circularqueue"
 	"github.com/shashisharma307/linkedlist/doublylinkedlist"
 	"github.com/shashisharma307/linkedlist/queuepkg"
 	"github.com/shashisharma307/linkedlist/singlylinkedlist"
@@ -88,5 +89,27 @@ func QueueOperation() {
 
 	fmt.Println("DeQueued Value :", cq.DeQueue())
 	cq.Print()
+
+}
+
+func CircularQueueOperation() {
+	c := circularqueue.CreateCircularQueue(3)
+	fmt.Println(c.Push(1))
+	fmt.Println(c.Push(2))
+	fmt.Println(c.Push(3))
+	fmt.Println(c.Push(4))
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	fmt.Println(c.Pop())
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	c.Push(9)
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	fmt.Println(c.Pop())
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	c.Push(11)
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	fmt.Println(c.Pop())
+	fmt.Println(c.Pop())
+	fmt.Println("realLength", c.QueueLength(), "queue", c.Display())
+	fmt.Println(c.CheckIfFull(), c.CheckIfEmpty())
 
 }

@@ -19,6 +19,8 @@ func main() {
 		helper.DoublyLinkedListOperation()
 	case "queue":
 		helper.QueueOperation()
+	case "circularqueue":
+		helper.CircularQueueOperation()
 	default:
 		fmt.Println("Incorrect operation ")
 
