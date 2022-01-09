@@ -73,6 +73,7 @@ func (ll *LinkedListSingle) InsertAtPos(val, pos int) {
 			node := CreateNode(val)
 			node.next = cur
 			prev.next = node
+			break
 		}
 
 		prev = cur
@@ -82,6 +83,33 @@ func (ll *LinkedListSingle) InsertAtPos(val, pos int) {
 
 }
 
+func (ll *LinkedListSingle) DeleteAtGivenPostion(pos int) {
+	if ll.list == nil {
+		fmt.Println("List is empty")
+		return
+	}
+
+	if pos == 1 {
+		temp := ll.list
+		ll.list = temp.next
+		return
+	}
+
+	i := 1
+	cur := ll.list
+	var prev *Node
+
+	for cur != nil {
+		if pos == i {
+			prev.next = cur.next
+			break
+		}
+		prev = cur
+		cur = cur.next
+		i++
+	}
+}
+
 func (ll *LinkedListSingle) DeleteFront() {
 
 	if ll.list == nil {
@@ -89,6 +117,28 @@ func (ll *LinkedListSingle) DeleteFront() {
 	}
 	cur := ll.list
 	ll.list = cur.next
+}
+
+func (ll *LinkedListSingle) DeleteEnd() {
+
+	if ll.list == nil {
+		fmt.Println("List is empyt")
+		return
+	}
+
+	temp := ll.list
+
+	if temp.next == nil {
+		temp = nil
+		ll.list = temp
+		return
+	}
+
+	for temp.next.next != nil {
+		temp = temp.next
+	}
+
+	temp.next = nil
 }
 
 func (ll *LinkedListSingle) Print() {
@@ -104,5 +154,5 @@ func (ll *LinkedListSingle) Print() {
 		fmt.Printf("| %d ", cur.value)
 		cur = cur.next
 	}
-	fmt.Print(" |")
+	fmt.Print(" |\n")
 }
