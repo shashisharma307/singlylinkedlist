@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/shashisharma307/linkedlist/doublylinkedlist"
+	"github.com/shashisharma307/linkedlist/queuepkg"
 	"github.com/shashisharma307/linkedlist/singlylinkedlist"
 )
 
@@ -73,4 +74,19 @@ func DoublyLinkedListOperation() {
 
 	dll.Print()
 	dll.PrintReverse()
+}
+
+func QueueOperation() {
+	cq := queuepkg.CreateCustomQueue()
+	cq.Insert(1)
+	cq.Insert(2)
+	cq.Insert(3)
+	cq.Insert(4)
+	cq.Insert(5)
+
+	cq.Print()
+
+	fmt.Println("DeQueued Value :", cq.DeQueue())
+	cq.Print()
+
 }

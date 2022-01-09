@@ -29,3 +29,9 @@
 # | 58 | 46 | 43 | 76 | 56 | 45 | 34 | 23 | 54 | 87  |
 # **************LinkedList**************
 # | 87 | 54 | 23 | 34 | 45 | 56 | 76 | 43 | 46 | 58  |
+
+
+Following are the steps to run the program
+
+1. go build main.go
+2. .\main -operation=<singlylinkedlist | doublylinkedlist | queue>
