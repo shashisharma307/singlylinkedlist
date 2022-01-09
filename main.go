@@ -23,19 +23,23 @@ func main() {
 	ll.InsertAtEnd(4)
 	ll.InsertAtEnd(5)
 
-	fmt.Println("Printing")
+	fmt.Println("\nPrinting")
 	ll.Print()
 
 	ll.InsertAtPos(89, 0)
-	fmt.Println("Printing")
+	fmt.Println("\nPrinting")
 	ll.Print()
 
 	ll.InsertAtPos(72, 1)
-	fmt.Println("Printing")
+	fmt.Println("\nPrinting")
 	ll.Print()
 
 	ll.InsertAtPos(74, 2)
-	fmt.Println("Printing")
+	fmt.Println("\nPrinting")
+	ll.Print()
+
+	ll.DeleteFront()
+	fmt.Println("\nLinked List After Deleting")
 	ll.Print()
 
 }

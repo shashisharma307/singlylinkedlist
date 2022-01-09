@@ -82,6 +82,15 @@ func (ll *LinkedListSingle) InsertAtPos(val, pos int) {
 
 }
 
+func (ll *LinkedListSingle) DeleteFront() {
+
+	if ll.list == nil {
+		fmt.Println("List is empyt")
+	}
+	cur := ll.list
+	ll.list = cur.next
+}
+
 func (ll *LinkedListSingle) Print() {
 
 	if ll.list == nil {
@@ -89,9 +98,11 @@ func (ll *LinkedListSingle) Print() {
 	}
 
 	cur := ll.list
+	fmt.Println("**************LinkedList**************")
+
 	for cur != nil {
-		fmt.Println("Val :", cur.value)
+		fmt.Printf("| %d ", cur.value)
 		cur = cur.next
 	}
-
+	fmt.Print(" |")
 }
