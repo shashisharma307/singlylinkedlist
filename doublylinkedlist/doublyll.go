@@ -49,6 +49,26 @@ func (ll *LinkedListDoubly) InsertAtBegining(val int) {
 	ll.tail = prev //setting last node to tail of link list which is maintained by the prev node after for loop ends
 }
 
+func (ll *LinkedListDoubly) InsertAtEnd(val int) {
+	temp := CreateNode(val)
+	if ll.list == nil {
+		ll.list = temp
+		return
+	}
+
+	cur := ll.list
+	var prev *Node
+	for cur != nil {
+		prev = cur
+		cur = cur.next
+	}
+
+	temp.prev = prev
+	prev.next = temp
+
+	ll.tail = temp
+}
+
 func (ll *LinkedListDoubly) Print() {
 
 	if ll.list == nil {

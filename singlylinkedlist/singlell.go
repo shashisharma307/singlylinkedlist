@@ -141,6 +141,55 @@ func (ll *LinkedListSingle) DeleteEnd() {
 	temp.next = nil
 }
 
+func (ll *LinkedListSingle) Reverse() *Node {
+
+	head := ll.list
+
+	if head == nil {
+		fmt.Println("List is empty")
+	}
+
+	var next *Node
+	var prev *Node
+
+	current := head
+
+	/*
+		Logic to reverse link list
+		1. we will maintain 3 pointer := current, prev and next
+		2. current will point to current head pointer initially. next and prev initially will be nil
+		3. we will loop throught list checking current pointer is not nil
+		4. copying current.next to next pointer to maintain the right end of the linkedlist
+		5. copying prev pointer to current.next link to establish the current node link with left side of list
+		6. copying current pointer value to prev
+		7. incrementing current pointer to the next
+	*/
+
+	for current != nil {
+		next = current.next //Copying the next node value in next pointer
+		current.next = prev //In first iteration it will set value nil and from 2nd iteration prev pointer is copied to current.next link
+		prev = current      // setting current node to previous so we can have both pointer stored
+		current = next      // incrementing the current pointer to next
+	}
+
+	return prev
+}
+
+func PrintReverse(list *Node) {
+	if list == nil {
+		fmt.Println("List is empty")
+	}
+
+	cur := list
+	fmt.Println("**************Reversed LinkedList**************")
+
+	for cur != nil {
+		fmt.Printf("| %d ", cur.value)
+		cur = cur.next
+	}
+	fmt.Print(" |\n")
+}
+
 func (ll *LinkedListSingle) Print() {
 
 	if ll.list == nil {

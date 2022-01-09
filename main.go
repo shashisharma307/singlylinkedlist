@@ -6,6 +6,6 @@ import (
 
 func main() {
 
-	//helper.SinglyLinkedListOperation()
+	helper.SinglyLinkedListOperation()
 	helper.DoublyLinkedListOperation()
 }

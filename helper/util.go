@@ -48,6 +48,9 @@ func SinglyLinkedListOperation() {
 
 	ll.DeleteAtGivenPostion(9)
 	ll.Print()
+
+	singlylinkedlist.PrintReverse(ll.Reverse())
+
 }
 
 func DoublyLinkedListOperation() {
@@ -62,4 +65,12 @@ func DoublyLinkedListOperation() {
 	dll.Print()
 	dll.PrintReverse()
 
+	dll.InsertAtEnd(45)
+	dll.InsertAtEnd(34)
+	dll.InsertAtEnd(23)
+	dll.InsertAtEnd(54)
+	dll.InsertAtEnd(87)
+
+	dll.Print()
+	dll.PrintReverse()
 }
